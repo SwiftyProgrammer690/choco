@@ -40,6 +40,13 @@ rl.question("What do you want to do? A. Generate a random game, B. Generate rand
 	console.log("Think about you question in your head")
 	console.log(responses[Math.floor(Math.random() * 20)])
     }
+    else if (answer == "E") {
+	var today = new Date();
+	var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+	var dateTime = date+' '+time;
+	console.log(dateTime)
+    }
     else {
         console.log("Please enter the command correctly!");
     }
