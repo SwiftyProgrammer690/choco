@@ -6,8 +6,8 @@ const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout,
 });
-  
-rl.question("What do you want to do? A. Generate a random game B. Generate random gmae + get a visual ", function (answer) {
+
+rl.question("What do you want to do? A. Generate a random game, B. Generate random game + get a visual, C. Random Dice roll and if u are super unlucky then u get a 0\n", function (answer) {
     if (answer == "A") {
         while (!chess.game_over()) {
             const moves = chess.moves()
@@ -15,7 +15,7 @@ rl.question("What do you want to do? A. Generate a random game B. Generate rando
             chess.move(move)
         }
         console.log(chess.pgn())
-    } 
+    }
     else if (answer == "B") {
         const chess = new Chess()
 
@@ -25,10 +25,14 @@ rl.question("What do you want to do? A. Generate a random game B. Generate rando
             chess.move(move)
         }
         console.log(chess.pgn())
-        console.log("End position/n" + chess.ascii())
-    }  
+        console.log("End Position:\n")
+        console.log(chess.ascii())
+    }
+    else if (answer == "C") {
+	console.log(Math.Random() * 6)
+    }
     else {
-        console.log("do it correctly");
+        console.log("Please enter the command correctly!");
     }
 });
 
