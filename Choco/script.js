@@ -7,7 +7,7 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question("What do you want to do? A. Generate a random game, B. Generate random game + get a visual, C. Random Dice roll and if u are super unlucky then u get a 0, D. 8ball\n", function (answer) {
+rl.question("What do you want to do? A. Generate a random game, B. Generate random game + get a visual, C. Random Dice roll and if u are super unlucky then u get a 0, D. 8ball, E. Get your local date and time\n", function (answer) {
     if (answer == "A") {
         while (!chess.game_over()) {
             const moves = chess.moves()
