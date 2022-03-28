@@ -1,5 +1,6 @@
 const readline = require("readline");
 const { Chess } = require('chess.js')
+var weather = require('weather-js');
 const chess = new Chess()
 
 const rl = readline.createInterface({
@@ -46,6 +47,12 @@ rl.question("What do you want to do? A. Generate a random game, B. Generate rand
 	var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 	var dateTime = date+' '+time;
 	console.log(dateTime)
+    }
+    else if (answer == "F") {
+	weather.find({search: 'San Francisco, CA', degreeType: 'F'}, function(err, result) {
+  		if(err) console.log(err);
+		console.log(JSON.stringify(result, null, 2));
+	});
     }
     else {
         console.log("Please enter the command correctly!");
