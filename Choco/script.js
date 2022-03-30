@@ -8,7 +8,7 @@ const rl = readline.createInterface({
     output: process.stdout,
 });
 
-rl.question("What do you want to do? A. Generate a random game, B. Generate random game + get a visual, C. Random Dice roll and if u are super unlucky then u get a 0, D. 8ball, E. Get your local date and time\n", function (answer) {
+rl.question("What do you want to do? A. Generate a random game, B. Generate random game + get a visual, C. Random Dice roll and if u are super unlucky then u get a 0, D. 8ball, E. Get your local date and time, F. Get your weather!, G. Check for a leap year! Note, if you are using the terminal or git, your input may show up duplicate times!\n", function (answer) {
     if (answer == "A") {
         while (!chess.game_over()) {
             const moves = chess.moves()
@@ -54,6 +54,27 @@ rl.question("What do you want to do? A. Generate a random game, B. Generate rand
 		console.log(JSON.stringify(result, null, 2));
 	});
     }
+    else if (answer == "G") {
+	function checkLeapYear(year) {
+
+    		const leap = new Date(year, 1, 29).getDate() === 29;
+    		if (leap) {
+        	   console.log(year + ' is a leap year');
+    	        }
+		else {
+        	   console.log(year + ' is not a leap year');
+    	        }
+	}
+
+	const r2 = readline.createInterface({
+    		input: process.stdin,
+    		output: process.stdout,
+	});
+
+	r2.question("What year do you want checked for????????" , function (answer) {
+		checkLeapYear(parseInt(`${answer}`))
+	});
+}
     else {
         console.log("Please enter the command correctly!");
     }
