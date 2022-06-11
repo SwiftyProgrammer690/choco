@@ -10,3 +10,6 @@ Before executing, make sure you have node.js installed! You can install it here:
 <br>
 # Hope you have a nice time
 ![](https://seeklogo.com/images/C/choco-logo-AF37AB2380-seeklogo.com.gif)
+# CHOCO IS NO LONGER MAINAINED
+you will be ale to use it but this repository is now archived,
+thank you!
